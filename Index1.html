@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>C.E.B.M.R. - Site Oficial</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #eeeeee;
+    padding: 10px;
+}
+
+.site {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 15px;
+}
+
+/* =========================================================
+   PRINCIPAL
+========================================================= */
+
+.principal {
+    width: 100%;
+    background: #f7fafc;
+    border: 2px solid #dddddd;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.nome-site {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px;
+    color: #111111;
+    font-size: clamp(30px, 6vw, 42px);
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.descricao {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 25px;
+    color: #333333;
+    font-size: clamp(15px, 2vw, 18px);
+    line-height: 1.6;
+}
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.botoes {
+    width: 100%;
+}
+
+.botao {
+    display: flex;
+    width: 100%;
+    max-width: 320px;
+    height: 60px;
+    margin: 0 auto 12px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.youtube {
+    background: #ff0000;
+}
+
+.youtube:hover {
+    background: #d90000;
+}
+
+.tiktok {
+    background: #111111;
+}
+
+.tiktok:hover {
+    background: #333333;
+}
+
+/* =========================================================
+   BARRA DE PESQUISA
+========================================================= */
+
+.pesquisa-codigo {
+    width: 100%;
+    margin-top: 25px;
+    background: #ffffff;
+    border: 2px solid #dddddd;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.pesquisa-codigo h2 {
+    margin: 0 0 8px;
+    color: #111111;
+    text-align: center;
+    font-size: 25px;
+}
+
+.pesquisa-codigo p {
+    margin: 0 0 18px;
+    color: #666666;
+    text-align: center;
+    font-size: 14px;
+}
+
+.barra-pesquisa {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+#codigo-input {
+    flex: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 0 15px;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+#codigo-input:focus {
+    border-color: #2563eb;
+}
+
+#pesquisar-btn {
+    height: 50px;
+    padding: 0 22px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#pesquisar-btn:hover {
+    background: #1d4ed8;
+}
+
+#resultado-codigo {
+    display: none;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.resultado-sucesso {
+    display: block !important;
+    background: #e7f8ed;
+    color: #218838;
+}
+
+.resultado-erro {
+    display: block !important;
+    background: #ffe8e8;
+    color: #c62828;
+}
+
+/* =========================================================
+   CONTATO
+========================================================= */
+
+.titulo-instrucoes {
+    width: 100%;
+    color: #111111;
+    font-size: clamp(23px, 3vw, 28px);
+    text-align: center;
+    margin: 30px 0 20px;
+}
+
+.coluna {
+    width: 100%;
+    background: #f7fafc;
+    border: 2px solid #dddddd;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.titulo-coluna {
+    text-align: center;
+    color: #333333;
+    font-size: 23px;
+    margin: 0 0 20px;
+}
+
+.instrucoes {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.passo {
+    width: 100%;
+    min-width: 0;
+    background: #ffffff;
+    border: 2px solid #dddddd;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 150px;
+    overflow-wrap: anywhere;
+}
+
+.numero {
+    display: block;
+    color: #2563eb;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.texto {
+    color: #444444;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding: 5px;
+    }
+
+    .site {
+        padding: 5px;
+    }
+
+    .principal {
+        padding: 25px 10px;
+    }
+
+    .botao {
+        max-width: none;
+    }
+
+    .barra-pesquisa {
+        flex-direction: column;
+    }
+
+    #codigo-input,
+    #pesquisar-btn {
+        width: 100%;
+    }
+
+    .instrucoes {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="site">
+
+<!-- =====================================================
+     SITE OFICIAL
+===================================================== -->
+
+<section class="principal">
+
+    <h1 class="nome-site">
+        C.E.B.M.R.
+    </h1>
+
+    <p class="descricao">
+        Oi! Esse é meu primeiro site inicializado
+        pela CEBMR no jogo Mini World e na escola
+        São Gabriel para fugir da muni e fazer
+        várias coisas pela escola.
+    </p>
+
+    <div class="botoes">
+
+        <a
+            class="botao youtube"
+            href="https://m.youtube.com/channel/UCZFm-bHlWQ_IoJ8oDnU0izg"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Me siga no YouTube
+        </a>
+
+        <a
+            class="botao tiktok"
+            href="https://www.tiktok.com/@arthurvnof"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Me siga no TikTok
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BARRA DE PESQUISA DOS 4 SITES
+===================================================== -->
+
+<section class="pesquisa-codigo">
+
+    <h2>
+        🔎 Pesquisar código
+    </h2>
+
+    <p>
+        Digite o código do site que deseja acessar.
+    </p>
+
+    <div class="barra-pesquisa">
+
+        <input
+            type="text"
+            id="codigo-input"
+            placeholder="Digite o código..."
+            autocomplete="off"
+        >
+
+        <button
+            type="button"
+            id="pesquisar-btn"
+        >
+            Pesquisar
+        </button>
+
+    </div>
+
+    <div id="resultado-codigo"></div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTATO
+===================================================== -->
+
+<h2 class="titulo-instrucoes">
+    📱 Como entrar em contato
+</h2>
+
+<section class="coluna">
+
+    <h3 class="titulo-coluna">
+        Instruções
+    </h3>
+
+    <div class="instrucoes">
+
+        <div class="passo">
+
+            <span class="numero">
+                01
+            </span>
+
+            <p class="texto">
+
+                Me mande convite de amizade
+                no Mini World.
+
+                <br><br>
+
+                <strong>Nome:</strong>
+                Arthur10ano∞BR[dev]
+
+            </p>
+
+        </div>
+
+
+        <div class="passo">
+
+            <span class="numero">
+                02
+            </span>
+
+            <p class="texto">
+
+                Me mande convite de amizade
+                no Blood Strike.
+
+                <br><br>
+
+                <strong>Nome:</strong>
+                Arthur10ano∞
+
+            </p>
+
+        </div>
+
+
+        <div class="passo">
+
+            <span class="numero">
+                03
+            </span>
+
+            <p class="texto">
+
+                Me mande convite de amizade
+                no Roblox.
+
+                <br><br>
+
+                <strong>Nome:</strong>
+                arthurvn2447
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<script>
+
+/*
+=========================================================
+   C.E.B.M.R. — SISTEMA DE CÓDIGOS
+
+   1 = SITE OFICIAL
+   2 = SERRA MÓVEIS
+   3 = VNB4 / O LADO OBSCURO
+   4 = HISTÓRIA
+=========================================================
+*/
+
+
+const sites = {
+
+    "1": "https://www.cebmr.com.br",
+
+    "2": "",
+
+    "3": "",
+
+    "4": ""
+
+};
+
+
+/*
+=========================================================
+   PESQUISAR
+=========================================================
+*/
+
+function pesquisarCodigo() {
+
+    const codigo =
+        document
+        .getElementById("codigo-input")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const resultado =
+        document.getElementById("resultado-codigo");
+
+
+    resultado.className = "";
+
+
+    /*
+       VERIFICA SE O CÓDIGO EXISTE
+    */
+
+    if (
+        codigo !== "1" &&
+        codigo !== "2" &&
+        codigo !== "3" &&
+        codigo !== "4"
+    ) {
+
+        resultado.className =
+            "resultado-erro";
+
+        resultado.textContent =
+            "Código não encontrado. Digite 1, 2, 3 ou 4.";
+
+        return;
+
+    }
+
+
+    /*
+       VERIFICA SE O LINK JÁ FOI COLOCADO
+    */
+
+    if (sites[codigo] === "") {
+
+        resultado.className =
+            "resultado-erro";
+
+        resultado.textContent =
+            "Esse site ainda não foi conectado.";
+
+        return;
+
+    }
+
+
+    /*
+       ABRIR SITE
+    */
+
+    resultado.className =
+        "resultado-sucesso";
+
+    resultado.textContent =
+        "Abrindo o site...";
+
+
+    setTimeout(function() {
+
+        window.location.href =
+            sites[codigo];
+
+    }, 400);
+
+}
+
+
+/*
+=========================================================
+   BOTÃO PESQUISAR
+=========================================================
+*/
+
+document
+    .getElementById("pesquisar-btn")
+    .addEventListener(
+        "click",
+        pesquisarCodigo
+    );
+
+
+/*
+=========================================================
+   TECLA ENTER
+=========================================================
+*/
+
+document
+    .getElementById("codigo-input")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+
+                pesquisarCodigo();
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+
+  </html>
