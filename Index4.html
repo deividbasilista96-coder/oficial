@@ -1,190 +1,173 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>História da C.E.B.M.R.</title>
+<title>A História da C.E.B.M.R.</title>
 
 <style>
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
-    font-family: Arial, sans-serif;
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
-body {
-    background: #eeeeee;
-    padding: 10px;
+body{
+    background:#eeeeee;
+    padding:10px;
 }
 
-.site {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 18px;
-    padding: 15px;
+.site{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    background:#ffffff;
+    border-radius:18px;
+    padding:15px;
 }
 
-.principal {
-    width: 100%;
-    background: #f7fafc;
-    border: 2px solid #dddddd;
-    border-radius: 15px;
-    padding: 30px 20px;
-    text-align: center;
+.pesquisa{
+    width:100%;
+    background:#ffffff;
+    border:2px solid #dddddd;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:15px;
 }
 
-.nome-site {
-    color: #111111;
-    font-size: clamp(30px, 6vw, 42px);
-    font-weight: bold;
-    margin: 0 0 20px 0;
+.pesquisa h2{
+    margin:0 0 8px;
+    text-align:center;
 }
 
-.descricao {
-    color: #333333;
-    font-size: 18px;
-    line-height: 1.6;
+.pesquisa p{
+    text-align:center;
+    color:#666666;
+    font-size:14px;
 }
 
-.pesquisa {
-    width: 100%;
-    margin-top: 25px;
-    background: #f7fafc;
-    border: 2px solid #dddddd;
-    border-radius: 15px;
-    padding: 20px;
+.barra{
+    display:flex;
+    gap:10px;
 }
 
-.pesquisa h2 {
-    text-align: center;
-    color: #111111;
+#codigo{
+    flex:1;
+    min-width:0;
+    height:50px;
+    border:2px solid #cccccc;
+    border-radius:10px;
+    padding:0 15px;
+    font-size:16px;
+    outline:none;
 }
 
-.barra {
-    display: flex;
-    gap: 10px;
+#buscar{
+    height:50px;
+    padding:0 22px;
+    border:0;
+    border-radius:10px;
+    background:#2563eb;
+    color:#ffffff;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-#pesquisa {
-    flex: 1;
-    height: 50px;
-    padding: 0 15px;
-    border: 2px solid #cccccc;
-    border-radius: 10px;
-    font-size: 16px;
+#resultado{
+    display:none;
+    margin-top:12px;
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
 }
 
-#pesquisar {
-    height: 50px;
-    padding: 0 22px;
-    border: none;
-    border-radius: 10px;
-    background: #2563eb;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+.sucesso{
+    display:block!important;
+    background:#e7f8ed;
+    color:#218838;
 }
 
-#resultado {
-    text-align: center;
-    margin-top: 15px;
-    font-weight: bold;
+.erro{
+    display:block!important;
+    background:#ffe8e8;
+    color:#c62828;
 }
 
-.historia {
-    width: 100%;
-    margin-top: 25px;
-    background: #f7fafc;
-    border: 2px solid #dddddd;
-    border-radius: 15px;
-    padding: 25px;
+.conteudo{
+    background:#f7fafc;
+    border:2px solid #dddddd;
+    border-radius:15px;
+    padding:25px;
 }
 
-.historia h2 {
-    text-align: center;
-    color: #111111;
+h1{
+    text-align:center;
+    color:#2563eb;
+    font-size:clamp(28px,5vw,42px);
 }
 
-.historia p {
-    color: #444444;
-    font-size: 17px;
-    line-height: 1.7;
-    overflow-wrap: anywhere;
+h2{
+    color:#2563eb;
+    margin-top:30px;
 }
 
-@media screen and (max-width: 600px) {
+p{
+    color:#333333;
+    font-size:17px;
+    line-height:1.7;
+}
 
-    body {
-        padding: 5px;
+@media(max-width:600px){
+
+    .barra{
+        flex-direction:column;
     }
 
-    .site {
-        padding: 5px;
+    #buscar{
+        width:100%;
     }
 
-    .barra {
-        flex-direction: column;
-    }
-
-    #pesquisa,
-    #pesquisar {
-        width: 100%;
+    .conteudo{
+        padding:18px;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="site">
 
-<section class="principal">
-
-<h1 class="nome-site">
-📖 A História da C.E.B.M.R.
-</h1>
-
-<p class="descricao">
-A história da C.E.B.M.R. desde o começo até os dias de hoje.
-</p>
-
-</section>
-
-
 <section class="pesquisa">
 
-<h2>
-🔎 Pesquisar site
-</h2>
+<h2>🔎 Pesquisar código</h2>
+
+<p>
+Digite um código para abrir outro site.
+</p>
 
 <div class="barra">
 
 <input
-id="pesquisa"
-type="text"
-placeholder="Digite o nome do site..."
-autocomplete="off"
+    id="codigo"
+    placeholder="Digite o código..."
+    autocomplete="off"
 >
 
-<button
-id="pesquisar"
-type="button"
->
+<button id="buscar">
 Pesquisar
 </button>
 
@@ -194,12 +177,9 @@ Pesquisar
 
 </section>
 
+<section class="conteudo">
 
-<section class="historia">
-
-<h2>
-📖 A História da C.E.B.M.R.
-</h2>
+<h1>📖 A História da C.E.B.M.R.</h1>
 
 <p>
 Tudo começou quando começou a Caçada Mirim.
@@ -253,115 +233,73 @@ Essa é a história da C.E.B.M.R., desde o começo da Caçada Mirim até a nossa
 
 </div>
 
-
 <script>
 
-const sites = {
+const paginas = {
 
-    "cebmr": "",
+    "cebmr":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index1.html",
 
-    "site oficial": "",
+    "serra móveis":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index2.html",
 
-    "serra moveis": "",
-    "serra móveis": "",
-    "serramoveis": "",
+    "serra moveis":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index2.html",
 
-    "vnb4": "",
-    "o lado obscuro": "",
+    "vnb4":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index3.html",
 
-    "historia": "",
-    "história": ""
+    "história":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index4.html",
+
+    "historia":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index4.html"
 
 };
 
+function pesquisar(){
 
-async function executarHTML(url) {
-
-    try {
-
-        const resposta = await fetch(url);
-
-        if (!resposta.ok) {
-            throw new Error("Erro ao carregar o HTML.");
-        }
-
-        const html = await resposta.text();
-
-        document.open();
-        document.write(html);
-        document.close();
-
-    } catch (erro) {
-
-        document.getElementById("resultado").textContent =
-            "Não foi possível carregar o site.";
-
-    }
-
-}
-
-
-function pesquisarSite() {
-
-    const nome =
-        document
-        .getElementById("pesquisa")
+    const entrada=document
+        .getElementById("codigo")
         .value
         .trim()
         .toLowerCase();
 
-    const resultado =
-        document.getElementById("resultado");
+    const resultado=document
+        .getElementById("resultado");
 
+    if(paginas[entrada]){
 
-    if (!nome) {
+        resultado.className="sucesso";
 
-        resultado.textContent =
-            "Digite o nome do site.";
+        resultado.textContent="Código encontrado! Abrindo...";
 
-        return;
+        window.location.href=paginas[entrada];
 
-    }
+    }else{
 
+        resultado.className="erro";
 
-    if (!sites[nome]) {
-
-        resultado.textContent =
-            "Site ainda não conectado.";
-
-        return;
+        resultado.textContent="Código não encontrado.";
 
     }
-
-
-    executarHTML(sites[nome]);
-
 }
 
+document
+    .getElementById("buscar")
+    .addEventListener("click",pesquisar);
 
 document
-    .getElementById("pesquisar")
-    .addEventListener(
-        "click",
-        pesquisarSite
-    );
+    .getElementById("codigo")
+    .addEventListener("keydown",function(event){
 
-
-document
-    .getElementById("pesquisa")
-    .addEventListener(
-        "keydown",
-        function(event) {
-
-            if (event.key === "Enter") {
-                pesquisarSite();
-            }
-
+        if(event.key==="Enter"){
+            pesquisar();
         }
-    );
+
+    });
 
 </script>
 
 </body>
-
-  </html>
+</html>
