@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>O Lado Obscuro da C.E.B.M.R.</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#111111;
+    padding:10px;
+    color:#eeeeee;
+}
+
+.site{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    background:#1b1b1b;
+    border-radius:18px;
+    padding:15px;
+}
+
+.pesquisa{
+    width:100%;
+    background:#242424;
+    border:2px solid #444444;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.pesquisa h2{
+    margin:0 0 8px;
+    text-align:center;
+    color:#ffffff;
+}
+
+.pesquisa p{
+    text-align:center;
+    color:#bbbbbb;
+    font-size:14px;
+}
+
+.barra{
+    display:flex;
+    gap:10px;
+}
+
+#codigo{
+    flex:1;
+    min-width:0;
+    height:50px;
+    border:2px solid #666666;
+    border-radius:10px;
+    padding:0 15px;
+    font-size:16px;
+    outline:none;
+}
+
+#buscar{
+    height:50px;
+    padding:0 22px;
+    border:0;
+    border-radius:10px;
+    background:#7c3aed;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#buscar:hover{
+    background:#6d28d9;
+}
+
+#resultado{
+    display:none;
+    margin-top:12px;
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.sucesso{
+    display:block!important;
+    background:#173d25;
+    color:#72e39a;
+}
+
+.erro{
+    display:block!important;
+    background:#4b1b1b;
+    color:#ff8b8b;
+}
+
+.conteudo{
+    background:#1b1b1b;
+    border:2px solid #444444;
+    border-radius:15px;
+    padding:25px;
+}
+
+h1{
+    text-align:center;
+    color:#b48cff;
+    font-size:clamp(27px,5vw,42px);
+}
+
+h2{
+    color:#b48cff;
+    margin-top:30px;
+}
+
+p{
+    color:#eeeeee;
+    font-size:17px;
+    line-height:1.7;
+}
+
+@media(max-width:600px){
+
+    .barra{
+        flex-direction:column;
+    }
+
+    #buscar{
+        width:100%;
+    }
+
+    .conteudo{
+        padding:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="site">
+
+<section class="pesquisa">
+
+<h2>🔎 Pesquisar código</h2>
+
+<p>
+Digite um código para abrir outro site.
+</p>
+
+<div class="barra">
+
+<input
+    id="codigo"
+    placeholder="Digite o código..."
+    autocomplete="off"
+>
+
+<button id="buscar">
+Pesquisar
+</button>
+
+</div>
+
+<div id="resultado"></div>
+
+</section>
+
+
+<section class="conteudo">
+
+<h1>🔒 O Lado Obscuro da C.E.B.M.R.</h1>
+
+<p>
+Olá, parece que você encontrou o site obscuro do grupo. Agora você poderá ver algumas coisas que não vão para o site oficial.
+</p>
+
+<h2>🧪 Os experimentos</h2>
+
+<p>
+Na série MR, todos eram obrigados a ajudar a fazer experimentos.
+</p>
+
+<p>
+Na escola, nós já fizemos o experimento 1 dentro de uma garrafinha, uma água azul com cheiro ruim.
+</p>
+
+<p>
+A gente escondeu na escola e deixou por meses lá, até que o Tainan Destructor foi lá e tirou.
+</p>
+
+<p>
+Depois, a gente criou outra garrafinha e escondeu do outro lado da escola, mas o Tainan Destructor foi lá e tirou de novo.
+</p>
+
+<p>
+Fizemos outra que a gente escondeu no cano da escola. Dessa vez o Tainan não viu nada.
+</p>
+
+<p>
+Também fizemos outra garrafinha que escondemos numa folha lá atrás da escola.
+</p>
+
+<p>
+Pretendemos criar mais experimentos.
+</p>
+
+<h2>🏕️ As bases</h2>
+
+<p>
+Primeira base: lá embaixo da escola. A gente fez uma base embaixo da escola e sempre ia lá.
+</p>
+
+<p>
+Depois fizemos uma base e continuamos indo lá.
+</p>
+
+<p>
+Depois tivemos que ir para a árvore, mas o monitor tirou a gente de lá.
+</p>
+
+<p>
+Depois tivemos que ir para o cubinho.
+</p>
+
+<p>
+Depois tivemos que ir lá embaixo de novo porque pegaram a gente no cubinho.
+</p>
+
+<p>
+Depois fomos lá atrás da escola onde construímos uma base cheia de mesas.
+</p>
+
+<h2>🏫 O problema</h2>
+
+<p>
+A gente foi lá e fez um monte de coisa. Só que a monitora achou que a gente estava tentando fazer algo perigoso na escola e levou a gente para a diretoria.
+</p>
+
+<p>
+Depois a gente trocou de base porque uma árvore caiu e fizemos nossa base lá.
+</p>
+
+<h2>🪑 As mesas</h2>
+
+<p>
+Depois os diretores começaram a fazer uma obra e a gente teve que ir lá atrás.
+</p>
+
+<p>
+A gente trouxe três mesas, só que um dos grandes pegou uma mesa para eles e a gente ficou somente com duas.
+</p>
+
+<h2>🔄 O fim do ciclo</h2>
+
+<p>
+Depois tivemos que ignorar tudo e ir embora porque a gente já estava arrumando problemas com todos.
+</p>
+
+<p>
+Aí a gente foi para o cubinho de novo.
+</p>
+
+<p>
+E todo o ciclo termina.
+</p>
+
+</section>
+
+</div>
+
+
+<script>
+
+const paginas = {
+
+    "1":"historia.html",
+    "historia":"historia.html",
+    "história":"historia.html",
+
+    "2":"obscuro.html",
+    "vnb4":"obscuro.html",
+
+    "3":"serra-moveis.html",
+    "serra moveis":"serra-moveis.html",
+    "serra móveis":"serra-moveis.html",
+    "serramoveis":"serra-moveis.html",
+
+    "4":"index.html",
+    "cebmr":"index.html",
+    "c.e.b.m.r.":"index.html"
+
+};
+
+function pesquisar(){
+
+    const entrada=document
+        .getElementById("codigo")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const resultado=document
+        .getElementById("resultado");
+
+    if(paginas[entrada]){
+
+        resultado.className="sucesso";
+
+        resultado.textContent="Código encontrado! Abrindo...";
+
+        setTimeout(function(){
+
+            window.location.href=paginas[entrada];
+
+        },300);
+
+    }else{
+
+        resultado.className="erro";
+
+        resultado.textContent="Código não encontrado.";
+
+    }
+}
+
+document
+    .getElementById("buscar")
+    .addEventListener("click",pesquisar);
+
+document
+    .getElementById("codigo")
+    .addEventListener("keydown",function(event){
+
+        if(event.key==="Enter"){
+            pesquisar();
+        }
+
+    });
+
+</script>
+
+</body>
+  </html>
