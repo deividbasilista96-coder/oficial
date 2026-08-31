@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Serra Móveis</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#eef5ef;
+    padding:10px;
+}
+
+.site{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    background:#ffffff;
+    border-radius:18px;
+    padding:15px;
+}
+
+.pesquisa{
+    width:100%;
+    background:#ffffff;
+    border:2px solid #dddddd;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:15px;
+}
+
+.pesquisa h2{
+    margin:0 0 8px;
+    text-align:center;
+}
+
+.pesquisa p{
+    text-align:center;
+    color:#666666;
+    font-size:14px;
+}
+
+.barra{
+    display:flex;
+    gap:10px;
+}
+
+#codigo{
+    flex:1;
+    min-width:0;
+    height:50px;
+    border:2px solid #cccccc;
+    border-radius:10px;
+    padding:0 15px;
+    font-size:16px;
+    outline:none;
+}
+
+#codigo:focus{
+    border-color:#258a45;
+}
+
+#buscar{
+    height:50px;
+    padding:0 22px;
+    border:0;
+    border-radius:10px;
+    background:#258a45;
+    color:#ffffff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#buscar:hover{
+    background:#1d7138;
+}
+
+#resultado{
+    display:none;
+    margin-top:12px;
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.sucesso{
+    display:block!important;
+    background:#e7f8ed;
+    color:#218838;
+}
+
+.erro{
+    display:block!important;
+    background:#ffe8e8;
+    color:#c62828;
+}
+
+.conteudo{
+    background:#f7fff9;
+    border:2px solid #dddddd;
+    border-radius:15px;
+    padding:25px;
+}
+
+h1{
+    text-align:center;
+    color:#258a45;
+    font-size:clamp(28px,5vw,42px);
+}
+
+h2{
+    color:#258a45;
+    margin-top:30px;
+}
+
+p{
+    color:#333333;
+    font-size:17px;
+    line-height:1.7;
+}
+
+@media(max-width:600px){
+
+    .barra{
+        flex-direction:column;
+    }
+
+    #buscar{
+        width:100%;
+    }
+
+    .conteudo{
+        padding:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="site">
+
+<section class="pesquisa">
+
+<h2>🔎 Pesquisar código</h2>
+
+<p>
+Digite um código para abrir outro site.
+</p>
+
+<div class="barra">
+
+<input
+    id="codigo"
+    placeholder="Digite o código..."
+    autocomplete="off"
+>
+
+<button id="buscar">
+Pesquisar
+</button>
+
+</div>
+
+<div id="resultado"></div>
+
+</section>
+
+
+<section class="conteudo">
+
+<h1>🛋️ Serra Móveis</h1>
+
+<p>
+<strong>Nome:</strong> Serra Móveis
+</p>
+
+<p>
+Parece que você encontrou o site da Serra Móveis, que é um grupo que também começou com brincadeiras e trocas, só que dessa vez na casa da minha avó.
+</p>
+
+<h2>📖 História</h2>
+
+<p>
+Tudo começou quando a gente era pequenininho. Eu e a Luana, a gente ia lá fora trocar umas coisas.
+</p>
+
+<p>
+Até que a gente começou a trocar tanto, mas tanto, que a Luana resolveu criar uma loja.
+</p>
+
+<p>
+A Luana foi lá atrás, eu também. A gente lá criou uma loja praticamente do zero.
+</p>
+
+<p>
+O vô foi comprando mais e mais coisas pra gente e a gente foi lá e deu os itens, fizemos os itens para lá.
+</p>
+
+<p>
+Começamos a organizar tudo no seu devido lugar, até que virou uma loja.
+</p>
+
+<h2>🪑 As mesas</h2>
+
+<p>
+Depois o vô resolveu ir lá comprar umas mesas pra gente usar.
+</p>
+
+<p>
+Ele comprou umas mesas e a gente usou lá.
+</p>
+
+<p>
+A gente foi lá, pegou, colocamos uma madeira em cima para servir assim como um tipo de mesa.
+</p>
+
+<p>
+A gente foi lá, fez todo um negócio difícil e aí sim ficou pronto.
+</p>
+
+<h2>🏪 A loja</h2>
+
+<p>
+Depois disso a gente começou a vir dias. A gente começou a brincar de loja Serra Móveis.
+</p>
+
+<p>
+Depois de um tempo a gente foi lá e começou a fazer um monte de coisa.
+</p>
+
+<h2>📦 O que aconteceu com a loja</h2>
+
+<p>
+Até que do nada alguém roubou a nossa loja.
+</p>
+
+<p>
+Praticamente a mesa, que estava cheia de itens, sumiu tudo e o compressor que a gente usava também desapareceu.
+</p>
+
+<p>
+A gente só teve a opção de pedir pro vô comprar um novo compressor e ele comprou.
+</p>
+
+<h2>🧸 Os brinquedos</h2>
+
+<p>
+Aí o meu Dindo resolveu fazer um negócio. Ele deu os brinquedos da Luana pra gente lá.
+</p>
+
+<p>
+Daí a Luana foi lá e a gente começou a organizar em todos os lugares.
+</p>
+
+<h2>🪵 A nova mesa</h2>
+
+<p>
+Depois disso a mesa quebrou e a gente já teve que construir outra mesa e colocamos outro pedaço de madeira.
+</p>
+
+<p>
+Depois a gente foi lá naquela mesa vermelha e colocamos lá.
+</p>
+
+<h2>📱 Arrumação de celulares</h2>
+
+<p>
+A gente fez a mesa de arrumação de celulares.
+</p>
+
+<p>
+Lá a loja era tipo um negócio pra arrumar celular e consertar celular.
+</p>
+
+<h2>🏁 Fim</h2>
+
+<p>
+Hoje em dia a gente ainda tem muita coisa pra arrumar, então a história continua.
+</p>
+
+<p>
+Sendo que ela nunca vai continuar.
+</p>
+
+<p>
+<strong>Serra Móveis — fim.</strong>
+</p>
+
+</section>
+
+</div>
+
+
+<script>
+
+const paginas = {
+
+    "1":"historia.html",
+    "historia":"historia.html",
+    "história":"historia.html",
+
+    "2":"obscuro.html",
+    "vnb4":"obscuro.html",
+
+    "3":"serra-moveis.html",
+    "serra moveis":"serra-moveis.html",
+    "serra móveis":"serra-moveis.html",
+    "serramoveis":"serra-moveis.html",
+
+    "4":"index.html",
+    "cebmr":"index.html",
+    "c.e.b.m.r.":"index.html"
+
+};
+
+function pesquisar(){
+
+    const entrada=document
+        .getElementById("codigo")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const resultado=document
+        .getElementById("resultado");
+
+    if(paginas[entrada]){
+
+        resultado.className="sucesso";
+
+        resultado.textContent="Código encontrado! Abrindo...";
+
+        setTimeout(function(){
+
+            window.location.href=paginas[entrada];
+
+        },300);
+
+    }else{
+
+        resultado.className="erro";
+
+        resultado.textContent="Código não encontrado.";
+
+    }
+}
+
+document
+    .getElementById("buscar")
+    .addEventListener("click",pesquisar);
+
+document
+    .getElementById("codigo")
+    .addEventListener("keydown",function(event){
+
+        if(event.key==="Enter"){
+            pesquisar();
+        }
+
+    });
+
+</script>
+
+</body>
+  </html>
