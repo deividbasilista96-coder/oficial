@@ -188,7 +188,6 @@ Pesquisar
 
 </section>
 
-
 <section class="conteudo">
 
 <h1>🛋️ Serra Móveis</h1>
@@ -313,26 +312,27 @@ Sendo que ela nunca vai continuar.
 
 </div>
 
-
 <script>
 
 const paginas = {
 
-    "1":"historia.html",
-    "historia":"historia.html",
-    "história":"historia.html",
+    "cebmr":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index1.html",
 
-    "2":"obscuro.html",
-    "vnb4":"obscuro.html",
+    "serra móveis":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index2.html",
 
-    "3":"serra-moveis.html",
-    "serra moveis":"serra-moveis.html",
-    "serra móveis":"serra-moveis.html",
-    "serramoveis":"serra-moveis.html",
+    "serra moveis":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index2.html",
 
-    "4":"index.html",
-    "cebmr":"index.html",
-    "c.e.b.m.r.":"index.html"
+    "vnb4":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index3.html",
+
+    "história":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index4.html",
+
+    "historia":
+    "https://raw.githubusercontent.com/deividbasilista96-coder/oficial/main/Index4.html"
 
 };
 
@@ -353,11 +353,7 @@ function pesquisar(){
 
         resultado.textContent="Código encontrado! Abrindo...";
 
-        setTimeout(function(){
-
-            window.location.href=paginas[entrada];
-
-        },300);
+        window.location.href=paginas[entrada];
 
     }else{
 
@@ -385,4 +381,4 @@ document
 </script>
 
 </body>
-  </html>
+</html>
