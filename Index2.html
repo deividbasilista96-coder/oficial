@@ -311,6 +311,10 @@ Sendo que ela nunca vai continuar.
 
 <script>
 
+/* =========================================
+   SISTEMA CENTRAL DE CÓDIGOS
+   ========================================= */
+
 const paginas = {
 
     "cebmr":
@@ -331,49 +335,101 @@ const paginas = {
     "historia":
     "https://deividbasilista96-coder.github.io/oficial/Index4.html",
 
-
-    "B/M":
+    /* B/M CORRIGIDO */
+    "b/m":
     "https://deividbasilista96-coder.github.io/oficial/Index5.html",
+
+    "bm":
+    "https://deividbasilista96-coder.github.io/oficial/Index5.html"
 
 };
 
+
+/* =========================================
+   PESQUISA
+   ========================================= */
+
 function pesquisar(){
 
-    const entrada=document
-        .getElementById("codigo")
-        .value
+    const campo = document.getElementById("codigo");
+    const resultado = document.getElementById("resultado");
+
+    /*
+       Converte o texto para minúsculo.
+       Assim B/M, b/m e BM podem funcionar.
+    */
+    const entrada = campo.value
         .trim()
         .toLowerCase();
 
-    const resultado=document
-        .getElementById("resultado");
+    /* Remove espaços desnecessários */
+    const codigo = entrada.replace(/\s+/g,"");
 
     if(paginas[entrada]){
 
-        resultado.className="sucesso";
+        resultado.className = "sucesso";
 
-        resultado.textContent="Código encontrado! Abrindo...";
+        resultado.textContent =
+            "Código encontrado! Abrindo...";
 
-        window.location.href=paginas[entrada];
+        setTimeout(function(){
 
-    }else{
+            window.location.href = paginas[entrada];
 
-        resultado.className="erro";
+        },300);
 
-        resultado.textContent="Código não encontrado.";
-
+        return;
     }
+
+    /*
+       Também verifica a versão sem espaços.
+       Isso permite códigos como:
+       B/M
+       b/m
+       BM
+    */
+
+    if(paginas[codigo]){
+
+        resultado.className = "sucesso";
+
+        resultado.textContent =
+            "Código encontrado! Abrindo...";
+
+        setTimeout(function(){
+
+            window.location.href = paginas[codigo];
+
+        },300);
+
+        return;
+    }
+
+    resultado.className = "erro";
+
+    resultado.textContent =
+        "Código não encontrado.";
 }
+
+
+/* =========================================
+   BOTÃO PESQUISAR
+   ========================================= */
 
 document
     .getElementById("buscar")
-    .addEventListener("click",pesquisar);
+    .addEventListener("click", pesquisar);
+
+
+/* =========================================
+   TECLA ENTER
+   ========================================= */
 
 document
     .getElementById("codigo")
-    .addEventListener("keydown",function(event){
+    .addEventListener("keydown", function(event){
 
-        if(event.key==="Enter"){
+        if(event.key === "Enter"){
             pesquisar();
         }
 
@@ -383,3 +439,16 @@ document
 
 </body>
 </html>
+
+Agora o B/M está conectado ao mesmo sistema de pesquisa, apontando para:
+
+"Index5.html"
+
+E estes códigos também funcionarão:
+
+- "B/M" ✅
+- "b/m" ✅
+- "BM" ✅
+- "bm" ✅
+
+O erro principal era justamente ""B/M"" × ".toLowerCase()", que transformava a entrada em ""b/m"".
