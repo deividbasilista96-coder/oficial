@@ -1,474 +1,894 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>C.E.B.M.R.</title>
-  <style>
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100%;
-      font-family: Arial, sans-serif;
-    }
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>C.E.B.M.R.</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222222;
+}
+
+body {
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+.pesquisa {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid #dddddd;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.pesquisa h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.pesquisa p {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#codigo {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+#codigo:focus {
+    border-color: #6c63ff;
+}
+
+.botao-pesquisar {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #6c63ff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-pesquisar:active {
+    transform: scale(0.98);
+}
+
+#resultado {
+    text-align: center;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.sucesso {
+    color: #16803c;
+}
+
+.erro {
+    color: #d62828;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 34px;
+}
+
+header p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BOTÕES EXTERNOS
+========================= */
+
+.botoes {
+    width: 100%;
+    max-width: 500px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.botao {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.botao:active {
+    transform: scale(0.97);
+}
+
+.youtube {
+    background: #ff0000;
+}
+
+.tiktok {
+    background: #000000;
+}
+
+.roblox {
+    background: #2563eb;
+}
+
+
+/* =========================
+   COLUNAS
+========================= */
+
+.colunas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.caixa {
+    padding: 20px;
+    border: 2px solid #dddddd;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.caixa h2 {
+    margin-top: 0;
+}
+
+.item {
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.numero {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6c63ff;
+}
+
+.nome {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.codigo {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 7px 10px;
+    border-radius: 7px;
+    background: #f0f0f0;
+    font-weight: bold;
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.chat {
+    width: 100%;
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid #dddddd;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.chat h2 {
+    margin-top: 0;
+}
+
+.chat input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 10px;
+    border: 2px solid #cccccc;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+.botao-chat {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 9px;
+    background: #6c63ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#mensagens {
+    margin-top: 15px;
+}
+
+.mensagem {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: #f2f2f2;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: #777777;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
     body {
-      background: #eeeeee;
-      padding: 10px;
+        padding: 12px;
     }
-    .site {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 18px;
-      padding: 15px;
-    }
-    .pesquisa {
-      width: 100%;
-      background: #ffffff;
-      border: 2px solid #dddddd;
-      border-radius: 15px;
-      padding: 20px;
-      margin-bottom: 15px;
-    }
-    .pesquisa h2 {
-      margin: 0 0 8px;
-      text-align: center;
-    }
-    .pesquisa p {
-      text-align: center;
-      color: #666666;
-      font-size: 14px;
-    }
-    .barra {
-      display: flex;
-      gap: 10px;
-    }
-    #codigo {
-      flex: 1;
-      min-width: 0;
-      height: 50px;
-      border: 2px solid #cccccc;
-      border-radius: 10px;
-      padding: 0 15px;
-      font-size: 16px;
-      outline: none;
-    }
-    #codigo:focus {
-      border-color: #2563eb;
-    }
-    #buscar {
-      height: 50px;
-      padding: 0 22px;
-      border: 0;
-      border-radius: 10px;
-      background: #2563eb;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #buscar:hover {
-      background: #1d4ed8;
-    }
-    #resultado {
-      display: none;
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: 8px;
-      text-align: center;
-      font-weight: bold;
-    }
-    .sucesso {
-      display: block !important;
-      background: #e7f8ed;
-      color: #218838;
-    }
-    .erro {
-      display: block !important;
-      background: #ffe8e8;
-      color: #c62828;
-    }
-    .principal {
-      width: 100%;
-      background: #f7fafc;
-      border: 2px solid #dddddd;
-      border-radius: 15px;
-      padding: 30px 15px;
-      text-align: center;
-    }
-    .nome-site {
-      color: #111111;
-      font-size: 40px;
-      font-weight: bold;
-      line-height: 1.3;
-      margin: 0 0 20px 0;
-    }
-    .descricao {
-      color: #333333;
-      font-size: 18px;
-      line-height: 1.6;
-      margin: 0 auto 25px auto;
-    }
-    .botoes {
-      text-align: center;
-    }
-    .botao {
-      display: flex;
-      width: 100%;
-      max-width: 320px;
-      height: 60px;
-      margin: 0 auto 12px auto;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .youtube { background: #ff0000; }
-    .tiktok { background: #111111; }
-    .titulo-instrucoes {
-      color: #111111;
-      font-size: 28px;
-      text-align: center;
-      margin: 30px 0 20px 0;
-    }
+
     .colunas {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
+        grid-template-columns: 1fr;
     }
-    .coluna {
-      background: #f7fafc;
-      border: 2px solid #dddddd;
-      border-radius: 15px;
-      padding: 15px;
+
+    header h1 {
+        font-size: 28px;
     }
-    .titulo-coluna {
-      text-align: center;
-      color: #333333;
-      font-size: 23px;
-      margin: 0 0 20px 0;
-    }
-    .instrucoes {
-      display: grid;
-      gap: 12px;
-    }
-    .passo {
-      background: white;
-      border: 2px solid #dddddd;
-      border-radius: 10px;
-      padding: 15px;
-    }
-    .numero {
-      display: block;
-      color: #2563eb;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .texto {
-      color: #444444;
-      font-size: 16px;
-      line-height: 1.5;
-      overflow-wrap: anywhere;
-    }
-    .chat {
-      margin-top: 25px;
-      background: #f7fafc;
-      border: 2px solid #dddddd;
-      border-radius: 15px;
-      padding: 20px;
-    }
-    .chat-titulo {
-      color: #111111;
-      text-align: center;
-      font-size: 28px;
-      margin: 0 0 10px 0;
-    }
-    .chat-aviso {
-      color: #666666;
-      text-align: center;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-    .chat-form {
-      display: flex;
-      gap: 10px;
-    }
-    .nome-input,
-    .mensagem-input {
-      height: 55px;
-      border: 2px solid #dddddd;
-      border-radius: 8px;
-      padding: 10px;
-      font-size: 16px;
-    }
-    .nome-input { width: 25%; }
-    .mensagem-input { width: 60%; }
-    .enviar {
-      width: 15%;
-      border: 0;
-      border-radius: 8px;
-      background: #2563eb;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .mensagens {
-      margin-top: 20px;
-      max-height: 400px;
-      overflow-y: auto;
-    }
-    .mensagem {
-      background: white;
-      border: 1px solid #dddddd;
-      border-radius: 8px;
-      padding: 12px;
-      margin-bottom: 10px;
-    }
-    .mensagem-nome {
-      color: #2563eb;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .mensagem-texto {
-      color: #444444;
-      overflow-wrap: anywhere;
-    }
-    .status {
-      text-align: center;
-      color: #777777;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-    @media screen and (max-width: 600px) {
-      body { padding: 5px; }
-      .site { padding: 8px; }
-      .nome-site { font-size: 32px; }
-      .descricao { font-size: 16px; }
-      .botao { max-width: none; }
-      .colunas { grid-template-columns: 1fr; }
-      .chat-form { flex-direction: column; }
-      .nome-input,
-      .mensagem-input,
-      .enviar {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-      .barra { flex-direction: column; }
-      #buscar { width: 100%; }
-    }
-  </style>
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <div class="site">
 
-    <!-- PESQUISA DE CÓDIGOS -->
+<div class="container">
+
+
+    <!-- =========================
+         BARRA DE PESQUISA
+    ========================== -->
+
     <section class="pesquisa">
-      <h2>🔎 Pesquisar código</h2>
-      <p>Digite um código para abrir outro site.</p>
-      <div class="barra">
-        <input id="codigo" type="text" placeholder="Digite o código..." autocomplete="off">
-        <button id="buscar" type="button">Pesquisar</button>
-      </div>
-      <div id="resultado"></div>
+
+        <h2>Pesquisar código</h2>
+
+        <p>
+            Digite um código para abrir outro site.
+        </p>
+
+        <input
+            type="text"
+            id="codigo"
+            placeholder="Digite o código..."
+            autocomplete="off"
+        >
+
+        <button
+            type="button"
+            class="botao-pesquisar"
+            onclick="pesquisar()"
+        >
+            Pesquisar
+        </button>
+
+        <div id="resultado"></div>
+
     </section>
 
-    <!-- PRINCIPAL -->
-    <section class="principal">
-      <h1 class="nome-site">C.E.B.M.R.</h1>
-      <p class="descricao">
-        Oi! Esse é meu primeiro site inicializado pela CEBMR no jogo Mini World e na escola São Gabriel para fugir da muni e fazer várias coisas pela escola.
-      </p>
-      <div class="botoes">
-        <a class="botao youtube" href="https://m.youtube.com/channel/UCZFm-bHlWQ_IoJ8oDnU0izg" target="_blank" rel="noopener noreferrer">
-          Me siga no YouTube
-        </a>
-        <a class="botao tiktok" href="https://www.tiktok.com/@arthurvnof" target="_blank" rel="noopener noreferrer">
-          Me siga no TikTok
-        </a>
-      </div>
-    </section>
 
-    <h2 class="titulo-instrucoes">📱 Como entrar em contato</h2>
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
 
-    <div class="colunas">
-      <!-- INSTRUÇÕES -->
-      <section class="coluna">
-        <h3 class="titulo-coluna">Instruções</h3>
-        <div class="instrucoes">
-          <div class="passo">
-            <span class="numero">01</span>
-            <p class="texto">
-              Me mande convite de amizade no Mini World.<br><br>
-              <strong>Nome:</strong> Arthur10ano∞BR[dev]
-            </p>
-          </div>
-          <div class="passo">
-            <span class="numero">02</span>
-            <p class="texto">
-              Me mande convite de amizade no Blood Strike.<br><br>
-              <strong>Nome:</strong> Arthur10ano∞
-            </p>
-          </div>
-          <div class="passo">
-            <span class="numero">03</span>
-            <p class="texto">
-              Me mande convite de amizade no Roblox.<br><br>
-              <strong>Nome:</strong> arthurvn2447
-            </p>
-          </div>
-        </div>
-      </section>
+    <header>
 
-      <!-- CÓDIGOS -->
-      <section class="coluna">
-        <h3 class="titulo-coluna">🔑 Códigos de acesso</h3>
-        <div class="instrucoes">
-          <div class="passo">
-            <span class="numero">01</span>
-            <p class="texto">
-              <strong>CEBMR</strong><br>
-              Código do site oficial.
-            </p>
-          </div>
-          <div class="passo">
-            <span class="numero">02</span>
-            <p class="texto">
-              <strong>Serra Móveis Normal</strong><br>
-              Código para acessar Serra Móveis.
-            </p>
-          </div>
-          <div class="passo">
-            <span class="numero">03</span>
-            <p class="texto">
-              <strong>História</strong><br>
-              Código para acessar a história.
-            </p>
-          </div>
-        </div>
-      </section>
+        <h1>C.E.B.M.R.</h1>
+
+        <p>
+            Oi! Esse é meu primeiro site inicializado pela
+            CEBMR no jogo Mini World e na escola São Gabriel
+            para fugir da muni e fazer várias coisas pela escola.
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         BOTÕES
+    ========================== -->
+
+    <div class="botoes">
+
+        <button
+            type="button"
+            class="botao youtube"
+            onclick="abrirSite('https://m.youtube.com/channel/UCZFm-bHlWQ_IoJ8oDnU0izg')"
+        >
+            Me siga no YouTube
+        </button>
+
+
+        <button
+            type="button"
+            class="botao tiktok"
+            onclick="abrirSite('https://www.tiktok.com/@arthurvnof')"
+        >
+            Me siga no TikTok
+        </button>
+
+
+        <button
+            type="button"
+            class="botao roblox"
+            onclick="abrirSite('https://www.roblox.com/pt/users/10961767632/profile')"
+        >
+            Adicionar amizade no Roblox
+        </button>
+
     </div>
 
-    <!-- CHAT -->
+
+    <!-- =========================
+         COLUNAS
+    ========================== -->
+
+    <div class="colunas">
+
+
+        <!-- =========================
+             CONTATOS
+        ========================== -->
+
+        <section class="caixa">
+
+            <h2>Como entrar em contato</h2>
+
+
+            <div class="item">
+
+                <div class="numero">01</div>
+
+                <div class="nome">
+                    Mini World
+                </div>
+
+                <div>
+                    Me mande convite de amizade no Mini World.
+                </div>
+
+                <div class="codigo">
+                    Arthur10ano∞BR[dev]
+                </div>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="numero">02</div>
+
+                <div class="nome">
+                    Blood Strike
+                </div>
+
+                <div>
+                    Me mande convite de amizade no Blood Strike.
+                </div>
+
+                <div class="codigo">
+                    Arthur10ano∞
+                </div>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="numero">03</div>
+
+                <div class="nome">
+                    Roblox
+                </div>
+
+                <div>
+                    Me mande convite de amizade no Roblox.
+                </div>
+
+                <div class="codigo">
+                    arthurvn2447
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CÓDIGOS PÚBLICOS
+             
+             IMPORTANTE:
+             VNB4 NÃO APARECE AQUI.
+        ========================== -->
+
+        <section class="caixa">
+
+            <h2>Códigos de acesso</h2>
+
+
+            <div class="item">
+
+                <div class="numero">01</div>
+
+                <div class="nome">
+                    Código oficial da C.E.B.M.R.
+                </div>
+
+                <div class="codigo">
+                    cebmr ou oficial
+                </div>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="numero">02</div>
+
+                <div class="nome">
+                    Código da Serra Móveis
+                </div>
+
+                <div class="codigo">
+                    serra moveis
+                </div>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="numero">03</div>
+
+                <div class="nome">
+                    Código da história da C.E.B.M.R.
+                </div>
+
+                <div class="codigo">
+                    historia
+                </div>
+
+            </div>
+
+
+            <div class="item">
+
+                <div class="numero">04</div>
+
+                <div class="nome">
+                    Site da nossa amizade
+                </div>
+
+                <div class="codigo">
+                    B/M
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================
+         CHAT
+    ========================== -->
+
     <section class="chat">
-      <h2 class="chat-titulo">💬 Chat público</h2>
-      <p class="chat-aviso">Converse com outras pessoas. Não compartilhe informações pessoais.</p>
-      <form class="chat-form" id="chatForm">
-        <input class="nome-input" id="nome" type="text" maxlength="30" placeholder="Seu nome" required>
-        <input class="mensagem-input" id="mensagem" type="text" maxlength="300" placeholder="Digite sua mensagem..." required>
-        <button class="enviar" type="submit">Enviar</button>
-      </form>
-      <div class="mensagens" id="mensagens"></div>
-      <p class="status" id="status">Chat aguardando configuração.</p>
+
+        <h2>Chat público</h2>
+
+        <input
+            type="text"
+            id="nome"
+            placeholder="Seu nome"
+            maxlength="30"
+        >
+
+        <input
+            type="text"
+            id="mensagem"
+            placeholder="Digite sua mensagem..."
+            maxlength="200"
+        >
+
+        <button
+            type="button"
+            class="botao-chat"
+            onclick="enviarMensagem()"
+        >
+            Enviar
+        </button>
+
+        <div id="mensagens"></div>
+
     </section>
 
-  </div>
 
-  <script>
-    // Lista de códigos e para onde eles levam
-    const paginas = {
-      // Código principal
-      "cebmr": "https://deividbasilista96-coder.github.io/oficial/Index1.html",
+    <footer>
+        C.E.B.M.R. - Site oficial
+    </footer>
 
-      // Serra Móveis (várias formas de escrever)
-      "serra moveis": "https://deividbasilista96-coder.github.io/oficial/Index2.html",
-      "serra moveis normal": "https://deividbasilista96-coder.github.io/oficial/Index2.html",
-      "serramoveis": "https://deividbasilista96-coder.github.io/oficial/Index2.html",
-      "serra": "https://deividbasilista96-coder.github.io/oficial/Index2.html",
+</div>
 
-      // História
-      "historia": "https://deividbasilista96-coder.github.io/oficial/Index4.html",
-      "historia ": "https://deividbasilista96-coder.github.io/oficial/Index4.html",
 
-      // Outros
-      "vnb4": "https://deividbasilista96-coder.github.io/oficial/Index3.html",
-      
-      "b/m": "https://deividbasilista96-coder.github.io/oficial/Index5.html",
-    };
+<script>
 
-    function limparTexto(texto) {
-      return texto
+
+/* =====================================================
+   SISTEMA DE SITES
+
+   CÓDIGOS PÚBLICOS:
+   CEBMR
+   SERRA MÓVEIS
+   HISTÓRIA
+   B/M
+
+   CÓDIGO SECRETO:
+   VNB4
+
+   O VNB4 NÃO É MOSTRADO NA PÁGINA.
+===================================================== */
+
+const paginas = {
+
+    /* SITE OFICIAL */
+
+    "cebmr":
+        "https://deividbasilista96-coder.github.io/oficial/Index1.html",
+
+    "oficial":
+        "https://deividbasilista96-coder.github.io/oficial/Index1.html",
+
+
+    /* SERRA MÓVEIS */
+
+    "serra moveis":
+        "https://deividbasilista96-coder.github.io/oficial/Index2.html",
+
+    "serra moveis normal":
+        "https://deividbasilista96-coder.github.io/oficial/Index2.html",
+
+    "serramoveis":
+        "https://deividbasilista96-coder.github.io/oficial/Index2.html",
+
+    "serra":
+        "https://deividbasilista96-coder.github.io/oficial/Index2.html",
+
+
+    /* HISTÓRIA */
+
+    "historia":
+        "https://deividbasilista96-coder.github.io/oficial/Index4.html",
+
+
+    /* B/M - PÚBLICO */
+
+    "b/m":
+        "https://deividbasilista96-coder.github.io/oficial/Index5.html",
+
+
+    /* VNB4 - SECRETO */
+
+    "vnb4":
+        "https://deividbasilista96-coder.github.io/oficial/Index3.html"
+
+};
+
+
+/* =====================================================
+   LIMPAR TEXTO
+===================================================== */
+
+function limparTexto(texto) {
+
+    return texto
         .trim()
         .toLowerCase()
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")   // remove acentos
-        .replace(/\s+/g, " ");             // tira espaços extras
-    }
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, " ");
 
-    function pesquisar() {
-      const input = document.getElementById("codigo");
-      const resultado = document.getElementById("resultado");
-      let entrada = limparTexto(input.value);
+}
 
-      // Se a pessoa digitar sem espaço também funciona
-      const entradaSemEspaco = entrada.replace(/\s/g, "");
 
-      let url = null;
+/* =====================================================
+   PESQUISA
+===================================================== */
 
-      if (paginas[entrada]) {
+function pesquisar() {
+
+    const input =
+        document.getElementById("codigo");
+
+    const resultado =
+        document.getElementById("resultado");
+
+    const entrada =
+        limparTexto(input.value);
+
+    const entradaSemEspaco =
+        entrada.replace(/\s/g, "");
+
+    let url = null;
+
+
+    /* CÓDIGO EXATO */
+
+    if (paginas[entrada]) {
+
         url = paginas[entrada];
-      } else if (paginas[entradaSemEspaco]) {
-        url = paginas[entradaSemEspaco];
-      }
 
-      // Atalhos extras
-      if (!url) {
-        if (entrada.includes("cebmr")) url = paginas["cebmr"];
-        else if (entrada.includes("serra") || entrada.includes("moveis")) url = paginas["serra moveis"];
-        else if (entrada.includes("historia")) url = paginas["historia"];
-        else if (entrada.includes("vnb4")) url = paginas["vnb4"];
-        else if (entrada === "bm" || entrada === "b/m" || entrada === "b m") url = paginas["bm"];
-      }
-
-      if (url) {
-        resultado.className = "sucesso";
-        resultado.textContent = "✅ Código encontrado! Abrindo...";
-        setTimeout(function() {
-          window.location.href = url;
-        }, 700);
-      } else {
-        resultado.className = "erro";
-        resultado.textContent = "❌ Código não encontrado. Tente: CEBMR, Serra Móveis Normal ou História";
-      }
     }
 
-    // Clique no botão
-    document.getElementById("buscar").addEventListener("click", pesquisar);
 
-    // Pressionar Enter
-    document.getElementById("codigo").addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        pesquisar();
-      }
+    /* CÓDIGO SEM ESPAÇOS */
+
+    else if (paginas[entradaSemEspaco]) {
+
+        url = paginas[entradaSemEspaco];
+
+    }
+
+
+    /* CEBMR */
+
+    else if (entrada.includes("cebmr")) {
+
+        url = paginas["cebmr"];
+
+    }
+
+
+    /* SERRA MÓVEIS */
+
+    else if (
+        entrada.includes("serra") ||
+        entrada.includes("moveis")
+    ) {
+
+        url = paginas["serra moveis"];
+
+    }
+
+
+    /* HISTÓRIA */
+
+    else if (entrada.includes("historia")) {
+
+        url = paginas["historia"];
+
+    }
+
+
+    /* VNB4
+       SECRETO
+       NÃO APARECE NA LISTA
+    */
+
+    else if (entrada.includes("vnb4")) {
+
+        url = paginas["vnb4"];
+
+    }
+
+
+    /* B/M */
+
+    else if (
+        entrada === "bm" ||
+        entrada === "b/m" ||
+        entrada === "b m"
+    ) {
+
+        url = paginas["b/m"];
+
+    }
+
+
+    /* =========================
+       ABRIR SITE
+    ========================== */
+
+    if (url) {
+
+        resultado.className = "sucesso";
+
+        resultado.textContent =
+            "Código encontrado! Abrindo...";
+
+
+        setTimeout(function() {
+
+            window.location.href = url;
+
+        }, 300);
+
+    }
+
+
+    /* =========================
+       ERRO
+    ========================== */
+
+    else {
+
+        resultado.className = "erro";
+
+        resultado.textContent =
+            "Código não encontrado.";
+
+    }
+
+}
+
+
+/* =====================================================
+   BOTÕES YOUTUBE / TIKTOK / ROBLOX
+===================================================== */
+
+function abrirSite(url) {
+
+    if (!url) {
+        return;
+    }
+
+    window.location.href = url;
+
+}
+
+
+/* =====================================================
+   ENTER NA PESQUISA
+===================================================== */
+
+document
+    .getElementById("codigo")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+            pesquisar();
+
+        }
+
     });
 
-    // Chat local simples
-    document.getElementById("chatForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const nome = document.getElementById("nome").value.trim();
-      const mensagem = document.getElementById("mensagem").value.trim();
-      if (!nome || !mensagem) return;
 
-      const container = document.getElementById("mensagens");
-      const div = document.createElement("div");
-      div.className = "mensagem";
-      div.innerHTML = `
-        <div class="mensagem-nome">${nome}</div>
-        <div class="mensagem-texto">${mensagem}</div>
-      `;
-      container.appendChild(div);
-      container.scrollTop = container.scrollHeight;
+/* =====================================================
+   CHAT LOCAL
+===================================================== */
 
-      document.getElementById("mensagem").value = "";
-      document.getElementById("status").textContent = "Mensagem enviada (só neste dispositivo).";
-    });
-  </script>
+function enviarMensagem() {
+
+    const nome =
+        document
+            .getElementById("nome")
+            .value
+            .trim();
+
+    const mensagem =
+        document
+            .getElementById("mensagem")
+            .value
+            .trim();
+
+    const mensagens =
+        document.getElementById("mensagens");
+
+
+    if (!nome || !mensagem) {
+
+        alert(
+            "Digite seu nome e sua mensagem."
+        );
+
+        return;
+
+    }
+
+
+    const div =
+        document.createElement("div");
+
+    div.className = "mensagem";
+
+    div.textContent =
+        nome + ": " + mensagem;
+
+
+    mensagens.appendChild(div);
+
+
+    document
+        .getElementById("mensagem")
+        .value = "";
+
+}
+
+</script>
+
 </body>
+
 </html>
