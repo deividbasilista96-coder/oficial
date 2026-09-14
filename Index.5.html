@@ -1,1 +1,642 @@
-i
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amizade — C.E.B.M.R.</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eeeeee;
+    padding: 10px;
+}
+
+.site {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 15px;
+}
+
+.pesquisa {
+    width: 100%;
+
+    background: #f7fafc;
+
+    border: 2px solid #dddddd;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+}
+
+.pesquisa h2 {
+    text-align: center;
+
+    color: #111111;
+
+    margin-top: 0;
+}
+
+.barra {
+    width: 100%;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+#codigo {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 50px;
+
+    border: 2px solid #dddddd;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    font-size: 16px;
+}
+
+.botao-pesquisa {
+    height: 50px;
+
+    padding: 0 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#resultado {
+    text-align: center;
+
+    margin-top: 12px;
+
+    font-weight: bold;
+
+    color: #333333;
+}
+
+.conteudo {
+    width: 100%;
+
+    background: #f7fafc;
+
+    border: 2px solid #dddddd;
+
+    border-radius: 15px;
+
+    padding: 25px;
+}
+
+h1 {
+    text-align: center;
+
+    color: #2563eb;
+}
+
+h2 {
+    color: #2563eb;
+
+    margin-top: 30px;
+}
+
+p {
+    color: #333333;
+
+    line-height: 1.7;
+}
+
+.codigo {
+    background: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    margin-top: 20px;
+}
+
+.capitulo {
+    background: white;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding: 5px;
+    }
+
+    .site {
+        padding: 5px;
+    }
+
+    .barra {
+        display: block;
+    }
+
+    #codigo {
+        display: block;
+
+        width: 100%;
+
+        margin-bottom: 10px;
+    }
+
+    .botao-pesquisa {
+        display: block;
+
+        width: 100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="site">
+
+
+<section class="pesquisa">
+
+
+<h2>
+🔎 Pesquisar código
+</h2>
+
+
+<div class="barra">
+
+
+<input
+id="codigo"
+type="text"
+placeholder="Digite um código..."
+autocomplete="off"
+>
+
+
+<button
+class="botao-pesquisa"
+onclick="pesquisar()"
+>
+Pesquisar
+</button>
+
+
+</div>
+
+
+<div
+id="resultado"
+></div>
+
+
+</section>
+
+
+
+<section class="conteudo">
+
+
+<h1>
+🤝 Nossa Amizade
+</h1>
+
+
+<p>
+Esse é um site para mostrar a amizade que eu, o Mathias e o Benjamin temos.
+</p>
+
+
+<p>
+A gente é tão amigo que sempre que eu vou na casa dele a gente acaba brincando de alguma coisa.
+</p>
+
+
+<p>
+Vou colocar o canal dele para quem quiser conhecer.
+</p>
+
+
+
+<div class="codigo">
+
+
+<strong>
+🔑 Código
+</strong>
+
+
+<p>
+<strong>B/M</strong> — Benjamim/Mathias
+</p>
+
+
+<p>
+<strong>Tipo:</strong> Não secreto
+</p>
+
+
+</div>
+
+
+
+<h2>
+📖 Nossa história
+</h2>
+
+
+
+<div class="capitulo">
+
+
+<p>
+Tudo começou quando eu e Benjamin Matias se conhecemos lá na casa do São João.
+</p>
+
+
+<p>
+Então a gente vai continuar isso então a gente é muito amigo e quando eu ia finalmente a primeira vez que eu fui lá na casa dele.
+</p>
+
+
+<p>
+A casa dele era gigante tinha a casa e o quiosque. Eles tinham um computador, um negócio de escorrega, um pula-pula e três carrinhos na verdade.
+</p>
+
+
+<p>
+Tinha vários brinquedos e era um paraíso para mim.
+</p>
+
+
+<p>
+A gente continuava brincando com isso o tempo todo e até que ficou muito legal a gente brincando.
+</p>
+
+
+<p>
+Até que a pior parte: eu tive que ir para casa.
+</p>
+
+
+<p>
+Depois de ir para casa.
+</p>
+
+
+<p>
+Depois disso eu e o Mathias fomos lá jogar Roblox no Xbox que ele tinha.
+</p>
+
+
+<p>
+Eu também tinha meu Xbox. Não, eu não tinha Xbox, eu estava no celular próprio.
+</p>
+
+
+<p>
+E naquela época eu era um dos maiores scripts na minha cidade.
+</p>
+
+
+<p>
+Depois disso o clima foi abaixando e a gente começou a brincar de coisa séria.
+</p>
+
+
+<p>
+Tinha poderes estranhos, tipo se transformar no protótipo, abrir o terceiro olho e virar o Goku.
+</p>
+
+
+<p>
+E sem falar que tinha o The Doctor.
+</p>
+
+
+<p>
+Depois de toda essa brincadeira louca a gente começou a fazer uma brincadeira que tinha um corredor assombrado que a gente tinha que entrar naquele corredor com brinquedos e água para acertar tudo que a gente via.
+</p>
+
+
+<p>
+Água benta que não é água benta e é isso, cara.
+</p>
+
+
+<p>
+E depois a gente fez lá a gente criou uma brincadeira que meu terceiro olho pegava uma folha no chão e criava um negócio fictício.
+</p>
+
+
+<p>
+Depois disso eu tive que ir para casa e aí começa um novo dia totalmente diferente.
+</p>
+
+
+<p>
+Começou naquele dia que tava um dia chuvoso e que estava decente, tudo querendo chover.
+</p>
+
+
+<p>
+A gente olhou lá pela casa do Matias.
+</p>
+
+
+<p>
+Uma coisa branca nos observando de uma janela.
+</p>
+
+
+<p>
+Até que a coisa se mexeu e a gente enlouqueceu. A gente saiu correndo sem saber por onde é que a gente tava indo. Eu fiquei para trás porque meu joelho é meio dobrado.
+</p>
+
+
+<p>
+Até que a gente chegou lá e a gente começou a pensar: será que a gente grava aquilo lá ou a gente fica parado?
+</p>
+
+
+<p>
+Até que eu peguei o celular do meu pai e a gente foi lá gravar. Eu saí correndo, eu e meus amigos lá, e a gente começou a gravar aquela coisa lá nos observando. E a gente viu que na gravação não aparecia, mas a gente tava vendo.
+</p>
+
+
+<p>
+Até que a gente saiu correndo que nem um jogo porque ela tinha se mexido, cara.
+</p>
+
+
+<p>
+Brincando, indo lá, brincando bastante, até que de novo eu tive que ir para casa.
+</p>
+
+
+<p>
+Depois a gente teve que ir lá no último dia de 2025.
+</p>
+
+
+<p>
+A gente brincou, brincou, brincou, brincou à vontade, mano. Nós brincamos muito porque a gente já estava lá há muitas horas e ficamos até meia-noite.
+</p>
+
+
+<p>
+Chega meia-noite e tudo acaba de novo.
+</p>
+
+
+<p>
+A gente tava brincando de lenda de novo, daquele corredor abandonado, só que dessa vez a gente tinha uma base.
+</p>
+
+
+<p>
+E dessa vez a gente foi lá, a gente correu no corredor abandonado entrando dentro da base.
+</p>
+
+
+<p>
+Nossos pais nos chamaram para a gente comer.
+</p>
+
+
+<p>
+A gente foi e depois de comer a gente estava terminando já de brincar e já estava ficando sem ideia até que a gente resolveu brincar no Xbox dele.
+</p>
+
+
+<p>
+Adivinha: ele tinha comprado um kit completo de peças para um Xbox.
+</p>
+
+
+<p>
+A gente estava brigando entre eu e ele para ver quem ia ganhar essa luta.
+</p>
+
+
+<p>
+E nessa hora já é meia-noite. Então os fogos de artifício já começaram a ser lançados ao céu e eu gritei várias coisas loucas.
+</p>
+
+
+<p>
+Finalmente acabou a noite. Eu só queria dormir e eu fui dormir.
+</p>
+
+
+<p>
+Aí começou um novo dia.
+</p>
+
+
+<p>
+Hoje aconteceu o seguinte: a gente foi lá.
+</p>
+
+
+<p>
+Só que dessa vez era diferente.
+</p>
+
+
+<p>
+A gente só foi tomar mate, não jantar.
+</p>
+
+
+<p>
+A gente pegou aqueles negócios lá de guarda-roupa e colocamos os brinquedos dentro do negócio de guarda-roupa.
+</p>
+
+
+<p>
+E quatro cadeiras era para ficar lá montando a base.
+</p>
+
+
+<p>
+Depois a gente ficou observando a casa por um tempinho e a gente começou a preparar as coisas da brincadeira.
+</p>
+
+
+<p>
+Depois disso a gente finalmente começou a fazer as coisas.
+</p>
+
+
+<p>
+Ficamos gravando, a gente ficou filmando a casa, fazendo muita coisa.
+</p>
+
+
+<p>
+Não pode filmar nem 10 minutos.
+</p>
+
+
+<p>
+Até que finalmente acabou tudo.
+</p>
+
+
+</div>
+
+
+
+<h2>
+📺 Canais
+</h2>
+
+
+<p>
+Aqui também vou divulgar os canais dos nossos amigos.
+</p>
+
+
+</section>
+
+
+</div>
+
+
+
+<script>
+
+
+const paginas = {
+
+    "cebmr":
+    "Index.html",
+
+    "s/m":
+    "Index2.html",
+
+    "vnb4":
+    "Index3.html",
+
+    "história":
+    "Index4.html",
+
+    "historia":
+    "Index4.html",
+
+    "b/m":
+    "Index5.html"
+
+};
+
+
+function pesquisar(){
+
+    const codigo =
+        document
+        .getElementById("codigo")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const resultado =
+        document
+        .getElementById("resultado");
+
+
+    if(paginas[codigo]){
+
+        resultado.textContent =
+            "Código encontrado! Abrindo...";
+
+        window.location.href =
+            paginas[codigo];
+
+    }else{
+
+        resultado.textContent =
+            "Código não encontrado.";
+
+    }
+
+}
+
+
+document
+.getElementById("codigo")
+.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+            pesquisar();
+        }
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>
