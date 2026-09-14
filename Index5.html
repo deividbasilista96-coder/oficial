@@ -76,6 +76,7 @@ body {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .botao-pesquisa:hover {
@@ -156,7 +157,6 @@ p {
 }
 
 </style>
-
 </head>
 
 <body>
@@ -340,7 +340,11 @@ Depois a gente teve que ir lá no último dia de 2025.
 </p>
 
 <p>
-A gente brincou, brincou, brincou, brincou à vontade, mano. Nós brincamos muito porque a gente já estava lá há muitas horas e ficamos até meia-noite.
+A gente brincou, brincou, brincou, brincou à vontade, mano.
+</p>
+
+<p>
+Nós brincamos muito porque a gente já estava lá há muitas horas e ficamos até meia-noite.
 </p>
 
 <p>
@@ -440,7 +444,7 @@ Aqui também vou divulgar os canais dos nossos amigos.
 <script>
 
 /* =========================================
-   SISTEMA CENTRAL DOS 5 CÓDIGOS
+   CONEXÃO DOS 5 CÓDIGOS
 ========================================= */
 
 const paginas = {
@@ -458,32 +462,56 @@ const paginas = {
         "https://deividbasilista96-coder.github.io/oficial/Index4.html",
 
     "b/m":
+        "https://deividbasilista96-coder.github.io/oficial/Index5.html",
+
+    
+    /* NOMES PERMITIDOS */
+
+    "serra moveis":
+        "https://deividbasilista96-coder.github.io/oficial/Index2.html",
+
+    "serra móveis":
+        "https://deividbasilista96-coder.github.io/oficial/Index2.html",
+
+    "serramoveis":
+        "https://deividbasilista96-coder.github.io/oficial/Index2.html",
+
+    "história":
+        "https://deividbasilista96-coder.github.io/oficial/Index4.html",
+
+    "nossa amizade":
+        "https://deividbasilista96-coder.github.io/oficial/Index5.html",
+
+    "amizade":
         "https://deividbasilista96-coder.github.io/oficial/Index5.html"
 
 };
 
 
 /* =========================================
-   NORMALIZA O CÓDIGO DIGITADO
+   NORMALIZAR PESQUISA
 ========================================= */
 
 function normalizarCodigo(texto) {
 
     return texto
-        .trim()
         .toLowerCase()
-        .replace(/\s+/g, "");
+        .trim()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, " ");
 
 }
 
 
 /* =========================================
-   PESQUISA
+   PESQUISAR
 ========================================= */
 
 function pesquisar() {
 
-    const campo = document.getElementById("codigo");
+    const campo =
+        document.getElementById("codigo");
 
     const resultado =
         document.getElementById("resultado");
@@ -514,8 +542,9 @@ function pesquisar() {
 
         setTimeout(function() {
 
-            window.location.href =
-                paginas[codigo];
+            window.location.assign(
+                paginas[codigo]
+            );
 
         }, 300);
 
@@ -531,7 +560,7 @@ function pesquisar() {
 
 
 /* =========================================
-   ENTER TAMBÉM PESQUISA
+   ENTER PARA PESQUISAR
 ========================================= */
 
 document
